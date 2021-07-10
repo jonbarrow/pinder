@@ -1,0 +1,124 @@
+{
+  "name": "PinderIcons",
+  "css_prefix_text": "",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "f5eca4c36e1b5ea2faf3c33e06db275a",
+      "css": "heart",
+      "code": 61444,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "c3f35e2fb502f9865ae9ae98ddff5e3f",
+      "css": "times_circle",
+      "code": 61527,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "9f800f7da01febad62313df059abdfa8",
+      "css": "cog",
+      "code": 61459,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "2964aa9dd703eebcf4e38951d6d2a85d",
+      "css": "phone",
+      "code": 61589,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "f92ed1b337f6767e9c4b6e6f667eb1b0",
+      "css": "route",
+      "code": 62679,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "442810453d6acd9c0d53e900bea2411c",
+      "css": "notes_medical",
+      "code": 62593,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "f02f68202cd407683a9f6e1551136593",
+      "css": "venus",
+      "code": 61985,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "ba643c5adff26d1551e0a04dec9d1224",
+      "css": "mars",
+      "code": 61986,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "5887a7c7be93fdc58af7a951385eac89",
+      "css": "dog",
+      "code": 63187,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "c900fd055d08348756f7376e274f100d",
+      "css": "cat",
+      "code": 63166,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "470008c856165c419dfc34d516320c9f",
+      "css": "syringe",
+      "code": 62606,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "f992dbb277d11f43496c58c1c53a0dfc",
+      "css": "baby",
+      "code": 63356,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "ce478aebf2ee3196db234828c8f7e653",
+      "css": "baby_carriage",
+      "code": 63357,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "2cfa86960247accff736f7539159cb1b",
+      "css": "mail_bulk",
+      "code": 63092,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "c76b9bf178497874158185c7a9a9e18e",
+      "css": "house_user",
+      "code": 59392,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "23026d7bd68fb4def9640cf9417ecd1e",
+      "css": "bird_claw",
+      "code": 59694,
+      "src": "rpgawesome"
+    },
+    {
+      "uid": "6b51c0d82ac8e4482cd3b5449d08d6ca",
+      "css": "toilet_paper",
+      "code": 63262,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "20e524b913343367a8de5d409d4ad460",
+      "css": "info_circle",
+      "code": 61530,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "2799c57f6de779678d46786054fb2dc3",
+      "css": "arrow_back",
+      "code": 59393,
+      "src": "material"
+    }
+  ]
+}
