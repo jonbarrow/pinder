@@ -91,3 +91,8 @@ flutter:
     - asset: fonts/OpenSans-Regular.ttf
     - asset: fonts/OpenSans-SemiBold.ttf
       weight: 700
+
+  plugin:
+    platforms:
+      ios:
+        pluginClass: AppDelegate
