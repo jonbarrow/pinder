@@ -20,11 +20,11 @@ workflows:
         script: xcode-project use-profiles
       - name: Get Flutter packages
         script: cd . && flutter packages pub get
-      - name: Flutter analyze
-        script: cd . && flutter analyze
-      - name: Flutter unit tests
-        script: cd . && flutter test
-        ignore_failure: true          
+      #- name: Flutter analyze
+      #  script: cd . && flutter analyze
+      #- name: Flutter unit tests
+      #  script: cd . && flutter test
+      #  ignore_failure: true          
       - name: Install pods
         script: find . -name "Podfile" -execdir pod install \;
       - name: Flutter build ipa and automatic versioning
