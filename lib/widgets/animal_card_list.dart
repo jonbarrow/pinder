@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tcard/tcard.dart';
 import 'package:pinder/pet_finder.dart' as pet_finder;
 import 'package:pinder/widgets/animal_card.dart';
-import 'package:location/location.dart';
+//import 'package:location/location.dart';
 
 
 class PinderAnimalCardList extends StatefulWidget {
