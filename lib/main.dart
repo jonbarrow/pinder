@@ -28,12 +28,12 @@ class PinderApp extends StatelessWidget {
         );
     }
 
-    throw Error();
+    return onUnknownRoute(settings);
   }
 
   Route onUnknownRoute(RouteSettings settings) {
     return PageRouteBuilder(
-      pageBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation){
+      pageBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation) {
         return Container(
           child: const Text('Something borked!')
         );

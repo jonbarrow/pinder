@@ -39,6 +39,9 @@
             android:value="2" />
     </application>
 
+    <!-- Access the internet -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <!-- Flutter url_launcher and map_launcher -->
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
 

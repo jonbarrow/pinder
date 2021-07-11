@@ -94,28 +94,26 @@ class PinderContactShelter extends StatelessWidget {
         )
       )
     );
-    
+
     return Container(
       margin: EdgeInsets.all(10),
-      child: Expanded(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              'Contact',
-              style: TextStyle(
-                fontSize: 22
-              ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            'Contact',
+            style: TextStyle(
+              fontSize: 22
             ),
-            Divider(
-              color: Colors.black
-            ),
-            Row(
-              children: icons,
-            )
-          ]
-        )
+          ),
+          Divider(
+            color: Colors.black
+          ),
+          Row(
+            children: icons,
+          )
+        ]
       )
     );
   }

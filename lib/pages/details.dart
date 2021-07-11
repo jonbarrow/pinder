@@ -64,74 +64,74 @@ class _DetailsPageState extends State<DetailsPage> {
           padding: EdgeInsets.all(10),
           child: SingleChildScrollView(
             child: Column(
-            children: <Widget>[
-              Container(
-                margin: EdgeInsets.only(bottom: 10),
-                height: MediaQuery.of(context).size.height * 0.5,
-                width: MediaQuery.of(context).size.width,
-                child: Stack(
-                  children: <Widget>[
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16.0),
-                      child: CachedNetworkImage(
-                        imageUrl: this.imageUrl,
-                        imageBuilder: (context, imageProvider) {
-                          return Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: imageProvider,
-                                fit: BoxFit.cover,
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.only(bottom: 10),
+                  height: MediaQuery.of(context).size.height * 0.5,
+                  width: MediaQuery.of(context).size.width,
+                  child: Stack(
+                    children: <Widget>[
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(16.0),
+                        child: CachedNetworkImage(
+                          imageUrl: this.imageUrl,
+                          imageBuilder: (context, imageProvider) {
+                            return Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: imageProvider,
+                                  fit: BoxFit.cover,
+                                )
                               )
-                            )
-                          );
-                        }
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: PinderBackButton(),
-                    )
-                  ],
-                )
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    PinderNameGender(name: this.metadata['name'], gender: this.metadata['gender']),
-                    Container(
-                      padding: EdgeInsets.fromLTRB(12, 4, 12, 4),
-                      alignment: Alignment.center,
-                      child: Text(
-                        '${this.metadata['distance'].round()} miles',
-                        style: TextStyle(
-                          color: Colors.black87
+                            );
+                          }
                         ),
                       ),
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              PinderContactShelter(contact: this.metadata['contact']),
-              PinderGoodWithEnvironment(environment: this.metadata['environment']),
-              PinderAttributes(attributes: this.metadata['attributes']),
-              Container(
-                margin: EdgeInsets.all(10),
-                child: Text(
-                  unescape.convert(this.metadata['description']),
-                  style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 18
+                      Container(
+                        margin: EdgeInsets.all(10),
+                        child: PinderBackButton(),
+                      )
+                    ],
                   )
                 ),
-              ),
-            ]
-          )
+                Container(
+                  margin: EdgeInsets.all(10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      PinderNameGender(name: this.metadata['name'], gender: this.metadata['gender']),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(12, 4, 12, 4),
+                        alignment: Alignment.center,
+                        child: Text(
+                          '${this.metadata['distance'].round()} miles',
+                          style: TextStyle(
+                            color: Colors.black87
+                          ),
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                PinderContactShelter(contact: this.metadata['contact']),
+                PinderGoodWithEnvironment(environment: this.metadata['environment']),
+                PinderAttributes(attributes: this.metadata['attributes']),
+                Container(
+                  margin: EdgeInsets.all(10),
+                  child: Text(
+                    unescape.convert(this.metadata['description']),
+                    style: TextStyle(
+                      color: Colors.black87,
+                      fontSize: 18
+                    )
+                  ),
+                ),
+              ]
+            )
           )
         )
       )
