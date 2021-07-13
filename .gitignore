@@ -416,3 +416,8 @@ fabric.properties
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.toptal.com/developers/gitignore/api/flutter,dart,android,xcode,visualstudiocode,androidstudio,windows,linux,macos
+
+
+
+# custom
+config.dart

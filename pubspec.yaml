@@ -36,6 +36,7 @@ dependencies:
   map_launcher: ^2.1.1
   location: ^4.3.0
   shared_preferences: ^2.0.6
+  google_mobile_ads: ^0.13.2
 
 dev_dependencies:
   flutter_test:

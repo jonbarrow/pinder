@@ -53,7 +53,7 @@ class PinderAnimalCard extends StatelessWidget {
             offset: Offset(0, 17),
             blurRadius: 23.0,
             spreadRadius: -13.0,
-            color: Colors.black54,
+            color: Colors.black12,
           )
         ],
       ),
@@ -73,6 +73,7 @@ class PinderAnimalCard extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(16.0),
                     child: CachedNetworkImage(
+                      placeholder: (context, url) => CircularProgressIndicator(),
                       imageUrl: this.imageUrl,
                       imageBuilder: (context, imageProvider) {
                         return Container(

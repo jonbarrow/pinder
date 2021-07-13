@@ -1,10 +1,8 @@
 import 'package:http/http.dart' as http; // HTTP package
 import 'dart:convert'; // Data conversion lib
+import 'package:pinder/config.dart' as config; 
 
-const String PETFINDER_CLIENT_ID = 'aPyHda3zCinlGy1lJ0fWFDAQQvpgUomPSbOR7igJVYp8e7WVmE';
-const String PETFINDER_CLIENT_SECRET = 'DYhhxZ48yFUWE3XrmbFHcEuyLt8CflBokBnZWrtJ';
-
-Future<dynamic> getAnimals([Map<String, dynamic> query = const {}]) async {
+Future<dynamic> getAnimals(query) async {
   var url = Uri.https('api.petfinder.com', 'v2/animals', query);
   return await apiRequest(url);
 }
@@ -35,8 +33,8 @@ Future<dynamic> apiRequest(Uri endpoint) async {
 Future<dynamic> getAccessToken() async {
   final Map<String, dynamic> body = {
     'grant_type': 'client_credentials',
-    'client_id': PETFINDER_CLIENT_ID,
-    'client_secret': PETFINDER_CLIENT_SECRET
+    'client_id': config.PETFINDER_CLIENT_ID,
+    'client_secret': config.PETFINDER_CLIENT_SECRET
   };
 
   var url = Uri.https('api.petfinder.com', '/v2/oauth2/token');
@@ -52,6 +50,7 @@ Future<dynamic> getAccessToken() async {
 /*
 void main() async {
   Map<String, dynamic> data = await getAnimals({'location': '32224', 'sort': 'distance', 'type': 'Cat'});
+  print(data['pagination']['current_page']+1);
   var animal = await getAnimal(data['animals'][0]['id']);
   print(animal['animal']['distance']);
   data['animals'].forEach((dynamic animal) {
