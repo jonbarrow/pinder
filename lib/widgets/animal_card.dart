@@ -7,12 +7,14 @@ import 'package:tcard/tcard.dart';
 
 class PinderAnimalCard extends StatelessWidget {
   final Map<String, dynamic> metadata;
-  final TCardController controller;
+  final void Function() onDislikeTap;
+  final void Function() onDetailsTap;
+  final void Function() onLikeTap;
 
   late String name = 'Pet Name';
   late String imageUrl;
 
-  PinderAnimalCard({required this.metadata, required this.controller});
+  PinderAnimalCard({required this.metadata, required this.onDislikeTap, required this.onDetailsTap, required this.onLikeTap});
 
   final BoxFit fit = BoxFit.cover;
 
@@ -100,25 +102,19 @@ class PinderAnimalCard extends StatelessWidget {
                           iconData: PinderIcons.times_circle,
                           iconColor: PinderColors.red,
                           buttonColor: PinderColors.lightred,
-                          onTap: () {
-                            this.controller.forward(direction: SwipDirection.Left);
-                          }
+                          onTap: this.onDislikeTap
                         ),
                         PinderIconButton(
                           iconData: PinderIcons.info_circle,
                           iconColor: PinderColors.darkgreen,
                           buttonColor: PinderColors.green,
-                          onTap: () {
-                            Navigator.pushNamed(context, '/details', arguments: { 'metadata': this.metadata });
-                          }
+                          onTap: this.onDetailsTap
                         ),
                         PinderIconButton(
                           iconData: PinderIcons.heart,
                           iconColor: PinderColors.pink,
                           buttonColor: PinderColors.redpink,
-                          onTap: () {
-                            this.controller.forward(direction: SwipDirection.Right);
-                          }
+                          onTap: this.onLikeTap
                         ),
                       ]
                     ),
