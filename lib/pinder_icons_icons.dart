@@ -41,6 +41,7 @@ class PinderIcons {
   static const IconData times_circle = IconData(0xf057, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData info_circle = IconData(0xf05a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData phone = IconData(0xf095, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData globe = IconData(0xf0ac, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData venus = IconData(0xf221, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData mars = IconData(0xf222, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData notes_medical = IconData(0xf481, fontFamily: _kFontFam, fontPackage: _kFontPkg);

@@ -6,8 +6,9 @@ import 'package:pinder/pinder_icons_icons.dart';
 
 class PinderContactShelter extends StatelessWidget {
   final Map<String, dynamic> contact;
+  final String url;
 
-  PinderContactShelter({ required this.contact });
+  PinderContactShelter({ required this.contact, required this.url });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class PinderContactShelter extends StatelessWidget {
         onTap: () {
           if (this.contact['phone'] != null) {
             final Uri _phoneLaunchUri =  Uri(scheme: 'tel', path: this.contact['phone']);
-            _makeSocialMediaRequest(_phoneLaunchUri.toString());
+            launchUrl(_phoneLaunchUri.toString());
           }
         },
         child: Padding(
@@ -35,8 +36,8 @@ class PinderContactShelter extends StatelessWidget {
       GestureDetector(
         onTap: () {
           if (this.contact['email'] != null) {
-             final Uri _emailLaunchUri =  Uri(scheme: 'mailto', path: this.contact['email'], queryParameters: {'subject': 'Adopt Pet'});
-            _makeSocialMediaRequest(_emailLaunchUri.toString());
+            final Uri _emailLaunchUri =  Uri(scheme: 'mailto', path: this.contact['email'], queryParameters: {'subject': 'Adopt Pet'});
+            launchUrl(_emailLaunchUri.toString());
           }
         },
         child: Padding(
@@ -95,6 +96,21 @@ class PinderContactShelter extends StatelessWidget {
       )
     );
 
+    icons.add(
+      GestureDetector(
+        onTap: () {
+          launchUrl(this.url);
+        },
+        child: Padding(
+          padding: EdgeInsets.all(5),
+          child: Icon(
+            PinderIcons.globe,
+            color: Colors.blue
+          )
+        )
+      )
+    );
+
     return Container(
       margin: EdgeInsets.all(10),
       child: Column(
@@ -119,7 +135,7 @@ class PinderContactShelter extends StatelessWidget {
   }
 }
 
-Future<void> _makeSocialMediaRequest(String url) async {
+Future<void> launchUrl(String url) async {
   if (await canLaunch(url)) {
     await launch(url);
   } else {

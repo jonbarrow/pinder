@@ -117,19 +117,9 @@ class _DetailsPageState extends State<DetailsPage> {
                     ],
                   ),
                 ),
-                PinderContactShelter(contact: this.metadata['contact']),
+                PinderContactShelter(contact: this.metadata['contact'], url: this.metadata['url']),
                 PinderGoodWithEnvironment(environment: this.metadata['environment']),
                 PinderAttributes(attributes: this.metadata['attributes']),
-                Container(
-                  margin: EdgeInsets.all(10),
-                  child: Text(
-                    unescape.convert(this.metadata['description']),
-                    style: TextStyle(
-                      color: Colors.black87,
-                      fontSize: 18
-                    )
-                  ),
-                ),
               ]
             )
           )
