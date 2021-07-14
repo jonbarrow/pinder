@@ -8,16 +8,16 @@ import 'package:pinder/widgets/name_gender.dart';
 import 'package:pinder/widgets/good_with_environment.dart';
 import 'package:pinder/widgets/attributes.dart';
 
-class DetailsPage extends StatefulWidget {
+class PinderDetailsPageRoute extends StatefulWidget {
  final Map<String, dynamic> metadata;
 
-  DetailsPage({required this.metadata});
+  PinderDetailsPageRoute({required this.metadata});
 
   @override
-  _DetailsPageState createState() => _DetailsPageState(metadata: this.metadata);
+  _PinderDetailsPageRouteState createState() => _PinderDetailsPageRouteState(metadata: this.metadata);
 }
 
-class _DetailsPageState extends State<DetailsPage> {
+class _PinderDetailsPageRouteState extends State<PinderDetailsPageRoute> {
   Map<String, dynamic> metadata;
 
   late String name = 'Pet Name';
@@ -25,7 +25,7 @@ class _DetailsPageState extends State<DetailsPage> {
 
   var unescape = HtmlUnescape();
 
-  _DetailsPageState({required this.metadata});
+  _PinderDetailsPageRouteState({required this.metadata});
 
   void initMetadata() {
     this.name = this.metadata['name'];
@@ -125,19 +125,6 @@ class _DetailsPageState extends State<DetailsPage> {
           )
         )
       )
-    );
-  }
-}
-
-class ImageDialog extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Dialog(
-      child: Container(
-        width: 200,
-        height: 200,
-        color: Colors.pink,
-      ),
     );
   }
 }

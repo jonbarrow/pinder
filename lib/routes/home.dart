@@ -4,14 +4,19 @@ import 'package:pinder/assets.dart';
 import 'package:pinder/pinder_icons_icons.dart';
 import 'package:pinder/widgets/animal_card_list.dart';
 
-class HomePage extends StatefulWidget {
+class PinderHomePageRoute extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _PinderHomePageRouteState createState() => _PinderHomePageRouteState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _PinderHomePageRouteState extends State<PinderHomePageRoute> {
   @override
   Widget build(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (_) => SplashDialog()
+    );
+
     // Stack of cards that can be swiped. Set width, height, etc here.
     return DecoratedBox(
       decoration: BoxDecoration(
@@ -72,6 +77,23 @@ class _HomePageState extends State<HomePage> {
             )
           ]
         )
+      ),
+    );
+  }
+}
+
+class SplashDialog extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        width: MediaQuery.of(context).size.width * 0.4,
+        height: 700,
+        color: Colors.white,
       ),
     );
   }
