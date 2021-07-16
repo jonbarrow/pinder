@@ -1,13 +1,19 @@
 import 'package:flutter/widgets.dart';
 
 class PinderColors {
+  // Normal colors
   static const Color pink = Color(0xFFFF9E9E);
   static const Color redpink = Color(0xFFFF5C5C);
   static const Color green = Color(0xffdaffcc);
   static const Color darkgreen = Color(0xff228000);
   static const Color red = Color(0xFFFF2929);
   static const Color lightred = Color(0xFFFF5353);
+  static const Color darkblue = Color(0xFF083F91);
 
+  // Brand colors
+  static const Color github = Color(0xFF181717);
+  static const Color patreon = Color(0xFFFF424D);
+  static const Color kofi = Color(0xFFFF5E5B);
 
 
 

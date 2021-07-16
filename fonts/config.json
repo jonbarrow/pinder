@@ -125,6 +125,66 @@
       "css": "globe",
       "code": 61612,
       "src": "fontawesome5"
+    },
+    {
+      "uid": "48cc210e59ff4bc56b6c8fba6eb384b8",
+      "css": "emo-coffee",
+      "code": 59400,
+      "src": "fontelico"
+    },
+    {
+      "uid": "8de7ed7d4ea2d9d737f88b2fd9efebfe",
+      "css": "github_alt",
+      "code": 61715,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "dd27a1fd1c2a08a7e8ba8fa80fae513c",
+      "css": "patreon",
+      "code": 62425,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "d6d89e7c50b8cfe54ad23fc2f266173b",
+      "css": "mug_hot",
+      "code": 63414,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "97b50f1730c502d313620654d05f8b04",
+      "css": "coffee",
+      "code": 61684,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "3df557988823d031d4972feed89617f3",
+      "css": "check",
+      "code": 61452,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "db592c1f2be4bec6b2962aad2b0d6c42",
+      "css": "dollar_sign",
+      "code": 61781,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "9b49502bf9d7f3acc956f44184d65cea",
+      "css": "info",
+      "code": 61737,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "2bd5f98482d86649958312ea2ab5bb40",
+      "css": "emo-laugh",
+      "code": 59410,
+      "src": "fontelico"
+    },
+    {
+      "uid": "a1d0a4ee40e88505ec9d4f0e79e557fc",
+      "css": "settings_backup_restore",
+      "code": 59394,
+      "src": "material"
     }
   ]
 }

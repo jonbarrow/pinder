@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:pinder/assets.dart';
 import 'package:pinder/pinder_icons_icons.dart';
-import 'package:pinder/widgets/details_button.dart';
 import 'package:pinder/widgets/icon_button.dart';
-import 'package:pinder/widgets/swipe_left_button.dart';
-import 'package:pinder/widgets/swipe_right_button.dart';
 
 class PinderAnimalCard extends StatelessWidget {
   final Map<String, dynamic> metadata;
@@ -100,9 +97,9 @@ class PinderAnimalCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        PinderSwipeLeftButton(onTap: this.onDislikeTap),
-                        PinderDetailsButton(onTap: this.onDetailsTap),
-                        PinderSwipeRightButton(onTap: this.onLikeTap),
+                        PinderIconButton(iconData: PinderIcons.times_circle, iconColor: PinderColors.red, buttonColor: Colors.white, onTap: this.onDislikeTap),
+                        PinderIconButton(iconData: PinderIcons.info_circle, iconColor: PinderColors.darkblue, buttonColor: Colors.white, onTap: this.onDetailsTap),
+                        PinderIconButton(iconData: PinderIcons.heart, iconColor: PinderColors.pink, buttonColor: Colors.white, onTap: this.onLikeTap),
                       ]
                     ),
                   ),

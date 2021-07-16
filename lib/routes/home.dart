@@ -1,8 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:pinder/assets.dart';
 import 'package:pinder/pinder_icons_icons.dart';
+import 'package:pinder/routes/splash_dialog.dart';
+import 'package:pinder/routes/remove_ads.dart';
 import 'package:pinder/widgets/animal_card_list.dart';
+import 'package:pinder/widgets/icon_button.dart';
 
 class PinderHomePageRoute extends StatefulWidget {
   @override
@@ -12,10 +16,14 @@ class PinderHomePageRoute extends StatefulWidget {
 class _PinderHomePageRouteState extends State<PinderHomePageRoute> {
   @override
   Widget build(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (_) => SplashDialog()
-    );
+    SharedPreferences.getInstance().then((SharedPreferences prefs) {
+      bool seen = prefs.getBool('seen_plash') ?? false;
+
+      if (!seen) {
+        showSplashDialog(context);
+        prefs.setBool('seen_plash', true);
+      }
+    });
 
     // Stack of cards that can be swiped. Set width, height, etc here.
     return DecoratedBox(
@@ -31,7 +39,7 @@ class _PinderHomePageRouteState extends State<PinderHomePageRoute> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.only(left: 10),
+                    padding: EdgeInsets.only(left: 20),
                     child: Text(
                       'Pinder',
                       style: TextStyle(
@@ -40,6 +48,7 @@ class _PinderHomePageRouteState extends State<PinderHomePageRoute> {
                       ),
                     ),
                   ),
+                  /*
                   Padding(
                     padding: EdgeInsets.only(right: 10),
                     child: Icon(
@@ -47,6 +56,7 @@ class _PinderHomePageRouteState extends State<PinderHomePageRoute> {
                       color: PinderColors.dark
                     ),
                   ),
+                  */
                 ]
               )
             ),
@@ -57,20 +67,21 @@ class _PinderHomePageRouteState extends State<PinderHomePageRoute> {
             ),
             Container(
               height: MediaQuery.of(context).size.height * 0.1,
+              padding: EdgeInsets.only(left: 20, right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text(
-                    'Pinder',
-                    style: TextStyle(
-                      color: Colors.black
-                    ),
+                  PinderIconButton(
+                    iconData: PinderIcons.dollar_sign,
+                    iconColor: Colors.white,
+                    buttonColor: PinderColors.darkgreen,
+                    onTap: () => showRemoveAdsDialog(context)
                   ),
-                  Text(
-                    'Settings',
-                    style: TextStyle(
-                      color: Colors.black
-                    ),
+                  PinderIconButton(
+                    iconData: PinderIcons.info,
+                    iconColor: Colors.white,
+                    buttonColor: PinderColors.darkgreen,
+                    onTap: () => showSplashDialog(context)
                   ),
                 ]
               ),
@@ -82,19 +93,20 @@ class _PinderHomePageRouteState extends State<PinderHomePageRoute> {
   }
 }
 
-class SplashDialog extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Dialog(
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(16.0),
-        ),
-        width: MediaQuery.of(context).size.width * 0.4,
-        height: 700,
-        color: Colors.white,
-      ),
-    );
-  }
+showRemoveAdsDialog(BuildContext context) {
+  PageRouteBuilder route = PageRouteBuilder(
+    opaque: false,
+    pageBuilder: (BuildContext context, _, __) => PinderRemoveAdsDialogRoute()
+  );
+
+  Navigator.of(context).push(route);
+}
+
+showSplashDialog(BuildContext context) {
+  PageRouteBuilder route = PageRouteBuilder(
+    opaque: false,
+    pageBuilder: (BuildContext context, _, __) => PinderSplashDialogRoute()
+  );
+
+  Navigator.of(context).push(route);
 }

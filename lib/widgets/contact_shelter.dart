@@ -1,8 +1,8 @@
-import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:map_launcher/map_launcher.dart';
 import 'package:pinder/pinder_icons_icons.dart';
+import 'package:pinder/util.dart';
 
 class PinderContactShelter extends StatelessWidget {
   final Map<String, dynamic> contact;
@@ -132,13 +132,5 @@ class PinderContactShelter extends StatelessWidget {
         ]
       )
     );
-  }
-}
-
-Future<void> launchUrl(String url) async {
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
   }
 }

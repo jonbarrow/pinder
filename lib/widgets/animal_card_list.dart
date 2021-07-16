@@ -26,15 +26,9 @@ class _PinderAnimalCardListState extends State<PinderAnimalCardList> {
     data['animals'].forEach((dynamic animal) {
       PinderAnimalCard card = PinderAnimalCard(
         metadata: animal,
-        onDislikeTap: () {
-          this._controller.forward(direction: SwipDirection.Left);
-        },
-        onDetailsTap: () {
-          Navigator.pushNamed(context, '/details', arguments: { 'metadata': animal });
-        },
-        onLikeTap: () {
-          this._controller.forward(direction: SwipDirection.Right);
-        },
+        onDislikeTap: () =>  this._controller.forward(direction: SwipDirection.Left),
+        onDetailsTap: () => Navigator.pushNamed(context, '/details', arguments: { 'metadata': animal }),
+        onLikeTap: () => this._controller.forward(direction: SwipDirection.Right),
       );
 
       list.add(card);

@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class PinderIconButton extends StatelessWidget {
   final IconData iconData;
@@ -16,17 +16,17 @@ class PinderIconButton extends StatelessWidget {
         padding: EdgeInsets.all(15),
         decoration: BoxDecoration(
           color: this.buttonColor,
-          border: Border.all(color: this.iconColor.withAlpha(60)),
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderRadius: BorderRadius.circular(90),
           boxShadow: [
             BoxShadow(
-              color: this.buttonColor.withAlpha(70),
-              blurRadius: 5,
-              spreadRadius: 2,
+              offset: Offset(0, 5),
+              blurRadius: 20.0,
+              spreadRadius: -13.0,
+              color: Colors.black,
             )
           ]
         ),
-        child: Icon(iconData, color: this.iconColor)
+        child: Icon(this.iconData, color: this.iconColor)
       )
     );
   }
