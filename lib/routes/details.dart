@@ -8,6 +8,9 @@ import 'package:pinder/widgets/name_gender.dart';
 import 'package:pinder/widgets/good_with_environment.dart';
 import 'package:pinder/widgets/attributes.dart';
 
+// Localization
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class PinderDetailsPageRoute extends StatefulWidget {
  final Map<String, dynamic> metadata;
 
@@ -104,7 +107,7 @@ class _PinderDetailsPageRouteState extends State<PinderDetailsPageRoute> {
                         padding: EdgeInsets.fromLTRB(12, 4, 12, 4),
                         alignment: Alignment.center,
                         child: Text(
-                          '${this.metadata['distance'].round()} miles',
+                          '${this.metadata['distance'].round()} ' + AppLocalizations.of(context)!.miles,
                           style: TextStyle(
                             color: Colors.black87
                           ),

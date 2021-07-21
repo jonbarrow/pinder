@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:pinder/pinder_icons_icons.dart';
 
+// Localization
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class PinderGoodWithEnvironment extends StatelessWidget {
   final Map<String, dynamic> environment;
 
@@ -10,17 +13,16 @@ class PinderGoodWithEnvironment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> icons = [];
-
     icons.add(
       GestureDetector(
         onTap: () async {
           await showModalActionSheet(
             context: context,
-            title: 'Good with children',
+            title: AppLocalizations.of(context)!.childrenTitle,
             actions: [
-              const SheetAction(
+              SheetAction(
                 icon: PinderIcons.baby,
-                label: 'When active this indicates that the pet is good around children!',
+                label: AppLocalizations.of(context)!.childrenDescription,
               ),
             ],
           );
@@ -40,11 +42,11 @@ class PinderGoodWithEnvironment extends StatelessWidget {
         onTap: () async {
           await showModalActionSheet(
             context: context,
-            title: 'Good with dogs',
+            title: AppLocalizations.of(context)!.dogsTitle,
             actions: [
-              const SheetAction(
+              SheetAction(
                 icon: PinderIcons.dog,
-                label: 'When active this indicates that the pet is good around dogs!',
+                label: AppLocalizations.of(context)!.dogsDescription,
               ),
             ],
           );
@@ -64,11 +66,11 @@ class PinderGoodWithEnvironment extends StatelessWidget {
         onTap: () async {
           await showModalActionSheet(
             context: context,
-            title: 'Good with cats',
+            title: AppLocalizations.of(context)!.catsTitle,
             actions: [
-              const SheetAction(
+              SheetAction(
                 icon: PinderIcons.cat,
-                label: 'When active this indicates that the pet is good around cats!',
+                label: AppLocalizations.of(context)!.catsDescription,
               ),
             ],
           );
@@ -90,7 +92,7 @@ class PinderGoodWithEnvironment extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            'Good with',
+            AppLocalizations.of(context)!.goodWith,
             style: TextStyle(
               fontSize: 22
             ),

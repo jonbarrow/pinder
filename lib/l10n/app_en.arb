@@ -1,0 +1,23 @@
+{
+  "welcomeMessage": "Thank you for installing Pinder! To support future development this app contains ads every 10 swipes. A no-ad version is available for $0.99. You can also check out my links below!",
+  "contact": "Contact",
+  "goodWith":  "Good with",
+  "childrenTitle": "Good with children",
+  "childrenDescription": "When active this indicates that the pet is good around children!",
+  "dogsTitle": "Good with dogs",
+  "dogsDescription": "When active this indicates that the pet is good around dogs!",
+  "catsTitle": "Good with cats",
+  "catsDescription": "When active this indicates that the pet is good around cats!",
+  "otherInfo": "Other info",
+  "spayedTitle": "Spayed/neutered",
+  "spayedDescription": "When active this indicates that the pet has been spayed/neutered!",
+  "houseTrainedTitle": "House trained",
+  "houseTrainedDescription": "When active this indicates that the pet has been house trained!",
+  "declawedTitle": "Declawed",
+  "declawedDescription": "When active this indicates that the pet has been declawed!",
+  "specialNeedsTitle": "Special needs",
+  "specialNeedsDescription": "When active this indicates that the pet has special needs!",
+  "shotsTitle": "Shots",
+  "shotsDescription": "When active this indicates that the pet has up-to-date shots!",
+  "miles": "miles"
+}

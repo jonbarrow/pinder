@@ -4,6 +4,9 @@ import 'package:map_launcher/map_launcher.dart';
 import 'package:pinder/pinder_icons_icons.dart';
 import 'package:pinder/util.dart';
 
+// Localization
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class PinderContactShelter extends StatelessWidget {
   final Map<String, dynamic> contact;
   final String url;
@@ -118,7 +121,7 @@ class PinderContactShelter extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            'Contact',
+            AppLocalizations.of(context)!.contact,
             style: TextStyle(
               fontSize: 22
             ),

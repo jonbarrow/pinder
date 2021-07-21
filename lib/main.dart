@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:pinder/routes/home.dart'; 
-import 'package:pinder/routes/details.dart'; 
+import 'package:pinder/routes/details.dart';
+// Localization
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -55,8 +58,14 @@ class PinderApp extends StatelessWidget {
       textStyle: TextStyle(
         color: Colors.black87
       ),
-      localizationsDelegates: [
-        DefaultMaterialLocalizations.delegate
+      localizationsDelegates: const [
+        AppLocalizations.delegate, // Add this line
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('en', '')
       ],
     );
   }

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:pinder/pinder_icons_icons.dart';
 
+// Localization
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class PinderAttributes extends StatelessWidget {
   final Map<String, dynamic> attributes;
 
@@ -16,11 +19,11 @@ class PinderAttributes extends StatelessWidget {
         onTap: () async {
           await showModalActionSheet(
             context: context,
-            title: 'Spayed/neutered',
+            title: AppLocalizations.of(context)!.spayedTitle,
             actions: [
-              const SheetAction(
+              SheetAction(
                 icon: PinderIcons.baby_carriage,
-                label: 'When active this indicates that the pet has been spayed/neutered!',
+                label: AppLocalizations.of(context)!.spayedDescription,
               ),
             ],
           );
@@ -40,11 +43,11 @@ class PinderAttributes extends StatelessWidget {
         onTap: () async {
           await showModalActionSheet(
             context: context,
-            title: 'House trained',
+            title: AppLocalizations.of(context)!.houseTrainedTitle,
             actions: [
-              const SheetAction(
+              SheetAction(
                 icon: PinderIcons.toilet_paper,
-                label: 'When active this indicates that the pet has been house trained!',
+                label: AppLocalizations.of(context)!.houseTrainedDescription,
               ),
             ],
           );
@@ -64,11 +67,11 @@ class PinderAttributes extends StatelessWidget {
         onTap: () async {
           await showModalActionSheet(
             context: context,
-            title: 'Declawed',
+            title: AppLocalizations.of(context)!.declawedTitle,
             actions: [
-              const SheetAction(
+              SheetAction(
                 icon: PinderIcons.bird_claw,
-                label: 'When active this indicates that the pet has been declawed!',
+                label: AppLocalizations.of(context)!.declawedDescription,
               ),
             ],
           );
@@ -88,11 +91,11 @@ class PinderAttributes extends StatelessWidget {
         onTap: () async {
           await showModalActionSheet(
             context: context,
-            title: 'Special needs',
+            title: AppLocalizations.of(context)!.specialNeedsTitle,
             actions: [
-              const SheetAction(
+              SheetAction(
                 icon: PinderIcons.notes_medical,
-                label: 'When active this indicates that the pet has special needs!',
+                label: AppLocalizations.of(context)!.specialNeedsDescription,
               ),
             ],
           );
@@ -112,11 +115,11 @@ class PinderAttributes extends StatelessWidget {
         onTap: () async {
           await showModalActionSheet(
             context: context,
-            title: 'Shots',
+            title: AppLocalizations.of(context)!.shotsTitle,
             actions: [
-              const SheetAction(
+              SheetAction(
                 icon: PinderIcons.syringe,
-                label: 'When active this indicates that the pet has up-to-date shots!',
+                label: AppLocalizations.of(context)!.shotsDescription,
               ),
             ],
           );
@@ -138,7 +141,7 @@ class PinderAttributes extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            'Other Info',
+            AppLocalizations.of(context)!.otherInfo,
             style: TextStyle(
               fontSize: 22
             ),

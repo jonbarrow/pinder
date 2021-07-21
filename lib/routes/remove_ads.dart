@@ -4,6 +4,9 @@ import 'package:pinder/pinder_icons_icons.dart';
 import 'package:pinder/widgets/icon_button.dart';
 import 'package:pinder/util.dart';
 
+// Localization
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class PinderRemoveAdsDialogRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -30,8 +33,7 @@ class PinderRemoveAdsDialogRoute extends StatelessWidget {
                   size: 72
                 ),
                 Text(
-                  'Thank you for installing Pinder! To support future development this app contains ads every 10 swipes. A no-ad version is available for \$0.99. You can also check out my links below!',
-                  textAlign: TextAlign.center,
+                  AppLocalizations.of(context)!.welcomeMessage,                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20
                   ),
