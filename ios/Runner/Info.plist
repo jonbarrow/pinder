@@ -63,5 +63,15 @@
 	<!-- Flutter location -->
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Find adoption shelters near you</string>
+	<!-- AdMob -->
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-6998282197951148~2910458272</string>
+	<key>SKAdNetworkItems</key>
+	<array>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>cstr6suwn9.skadnetwork</string>
+		</dict>
+	</array>
 </dict>
 </plist>

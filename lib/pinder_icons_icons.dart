@@ -40,7 +40,10 @@ class PinderIcons {
   static const IconData house_user = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData arrow_back = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData settings_backup_restore = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData emo_unhappy = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData emo_thumbsup = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData emo_coffee = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData emo_displeased = IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData emo_laugh = IconData(0xe812, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData bird_claw = IconData(0xe92e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData heart = IconData(0xf004, fontFamily: _kFontFam, fontPackage: _kFontPkg);

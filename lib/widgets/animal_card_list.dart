@@ -1,11 +1,14 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:pinder/assets.dart';
+import 'package:pinder/pinder_icons_icons.dart';
 import 'package:tcard/tcard.dart';
+import 'package:location/location.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:pinder/iap_handler.dart' as iap;
 import 'package:pinder/pet_finder.dart' as pet_finder;
 import 'package:pinder/widgets/animal_card.dart';
 import 'package:pinder/config.dart' as config;
-import 'package:location/location.dart';
 
 
 class PinderAnimalCardList extends StatefulWidget {
@@ -14,6 +17,7 @@ class PinderAnimalCardList extends StatefulWidget {
 }
 
 class _PinderAnimalCardListState extends State<PinderAnimalCardList> {
+  late Future future;
   TCardController _controller = TCardController();
   int apiPage = 1;
   int swipeCount = 0;
@@ -84,13 +88,38 @@ class _PinderAnimalCardListState extends State<PinderAnimalCardList> {
   }
 
   @override
+  void initState() {
+    this.future = getAnimals(this.apiPage);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       child: FutureBuilder<dynamic>(
-        future: getAnimals(this.apiPage), // sets the getTranding method as the expected Future
+        future: this.future, // sets the getTranding method as the expected Future
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           if (snapshot.hasData) { //checks if the response returns valid data
             // Add the widgets to the list
+
+            if (snapshot.data['animals'].length == 0) {
+              return Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      PinderIcons.emo_unhappy,
+                      color: PinderColors.darkgreen,
+                      size: 72
+                    ),
+                    SizedBox(height: 20),
+                    Text('Could not find any pets around you!')
+                  ]
+                )
+              );
+            }
+
             this.createCardList(snapshot.data, animalsList);
             this.loadNextAnimalSet();
             this.loadNextAd();
@@ -104,9 +133,10 @@ class _PinderAnimalCardListState extends State<PinderAnimalCardList> {
                 lockYAxis: true,
                 onForward: (index, info) {
                   this.swipeCount++;
-
                   if (this.swipeCount == 10) {
-                    this.showAd();
+                    if (!iap.disableAds) {
+                      this.showAd();
+                    }
                     this.swipeCount = 0;
                   }
                 },
@@ -117,10 +147,44 @@ class _PinderAnimalCardListState extends State<PinderAnimalCardList> {
               ),
             );
           } else if (snapshot.hasError) { //checks if the response throws an error
-            return Text('${snapshot.error}');
+            return Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(
+                    PinderIcons.emo_displeased,
+                    color: PinderColors.darkgreen,
+                    size: 72
+                  ),
+                  SizedBox(height: 20),
+                  Text('${snapshot.error}')
+                ]
+              )
+            );
           }
 
-          return const Text('Loading...'); // If no errors and no data, assume still loading
+          return Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  PinderIcons.emo_thumbsup,
+                  color: PinderColors.darkgreen,
+                  size: 72
+                ),
+                SizedBox(height: 20),
+                Text(
+                  'Searching for pets around you!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20
+                  ),
+                ),
+              ]
+            )
+          ); // If no errors and no data, assume still loading
         }
       )
     );
@@ -128,9 +192,9 @@ class _PinderAnimalCardListState extends State<PinderAnimalCardList> {
 }
 
 getAnimals(page) async {
-  LocationData locationData = await getLocation();
+  LocationData? locationData = await getLocation();
 
-  return pet_finder.getAnimals({'page': '$page', 'location': '${locationData.latitude},${locationData.longitude}', 'sort': 'distance'});
+  return pet_finder.getAnimals({'page': '$page', 'location': '${locationData?.latitude},${locationData?.longitude}', 'sort': 'distance'});
 }
 
 getLocation() async {

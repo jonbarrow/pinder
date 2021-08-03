@@ -2,7 +2,7 @@
     package="com.example.pinder">
    <application
         android:label="pinder"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -41,7 +41,7 @@
         <!-- Flutter google_mobile_ads -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="ca-app-pub-6998282197951148~2910458272"/>
     </application>
 
     <!-- Access the internet -->
@@ -52,5 +52,7 @@
 
     <!-- Flutter location  -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+
+    <!-- IAP -->
+    <uses-permission android:name="com.android.vending.BILLING" />
 </manifest>

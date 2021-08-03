@@ -37,10 +37,10 @@ class PinderSplashDialogRoute extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  //padding: EdgeInsets.only(left: 15, right: 15),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       PinderIconButton(
                         iconData: PinderIcons.globe,
@@ -54,18 +54,19 @@ class PinderSplashDialogRoute extends StatelessWidget {
                         buttonColor: PinderColors.github,
                         onTap: () => launchUrl('https://github.com/jonbarrow')
                       ),
-                      PinderIconButton(
+                      // Disabled for Google PlayStore review
+                      /*PinderIconButton(
                         iconData: PinderIcons.patreon,
                         iconColor: Colors.white,
                         buttonColor: PinderColors.patreon,
                         onTap: () => launchUrl('https://patreon.com/jonbarrow')
-                      ),
-                      PinderIconButton(
+                      ),*/
+                      /*PinderIconButton(
                         iconData: PinderIcons.coffee,
                         iconColor: Colors.white,
                         buttonColor: PinderColors.kofi,
                         onTap: () => launchUrl('https://ko-fi.com/jonbarrow')
-                      ),
+                      ),*/
                     ],
                   ),
                 ),

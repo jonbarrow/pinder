@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pinder/assets.dart';
 import 'package:pinder/pinder_icons_icons.dart';
 import 'package:pinder/widgets/icon_button.dart';
-import 'package:pinder/util.dart';
+import 'package:pinder/iap_handler.dart' as iap;
 
 class PinderRemoveAdsDialogRoute extends StatelessWidget {
   @override
@@ -25,46 +25,31 @@ class PinderRemoveAdsDialogRoute extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Icon(
-                  PinderIcons.emo_coffee,
+                  PinderIcons.emo_laugh,
                   color: PinderColors.darkgreen,
                   size: 72
                 ),
                 Text(
-                  'Thank you for installing Pinder! To support future development this app contains ads every 10 swipes. A no-ad version is available for \$0.99. You can also check out my links below!',
+                  'Want to remove ads and show support for future delevopment? Consider purchasing the Ad Free version of Pinder!',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20
                   ),
                 ),
                 Container(
-                  //padding: EdgeInsets.only(left: 15, right: 15),
+                  padding: EdgeInsets.only(left: 30, right: 30),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       PinderIconButton(
-                        iconData: PinderIcons.globe,
+                        iconData: PinderIcons.dollar_sign,
                         iconColor: Colors.white,
-                        buttonColor: Colors.blueAccent,
-                        onTap: () => launchUrl('https://jonbarrow.dev')
-                      ),
-                      PinderIconButton(
-                        iconData: PinderIcons.github_alt,
-                        iconColor: Colors.white,
-                        buttonColor: PinderColors.github,
-                        onTap: () => launchUrl('https://github.com/jonbarrow')
-                      ),
-                      PinderIconButton(
-                        iconData: PinderIcons.patreon,
-                        iconColor: Colors.white,
-                        buttonColor: PinderColors.patreon,
-                        onTap: () => launchUrl('https://patreon.com/jonbarrow')
-                      ),
-                      PinderIconButton(
-                        iconData: PinderIcons.coffee,
-                        iconColor: Colors.white,
-                        buttonColor: PinderColors.kofi,
-                        onTap: () => launchUrl('https://ko-fi.com/jonbarrow')
+                        buttonColor: PinderColors.darkgreen,
+                        onTap: () async {
+                          await iap.restore();
+                          iap.purchase(iap.getProducts()[0]);
+                        }
                       ),
                     ],
                   ),
