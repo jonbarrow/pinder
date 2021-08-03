@@ -1,3 +1,4 @@
+flutter pub run flutter_launcher_icons:main
 flutter build ipa
 CUR=$PWD
 cd ./build/ios/archive/Runner.xcarchive/Products/Applications
