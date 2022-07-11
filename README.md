@@ -1,16 +1,5 @@
 # pinder
 
-A new Flutter project.
+Pinder makes it easy for families to find their next furry match. Easily search through adoptable pets in your area in a simple swipe-style list. Contains details about each pet including if they are good with other pets, good with families, house broken, and more!
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Pinder is a mobile app written in Dart and Flutter. Using the users device location and data from the [Pet Finder](https://petfinder.com/) database to find all the currently adoptable pets around the user in an easy to use fashion.
